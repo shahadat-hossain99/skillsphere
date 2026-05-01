@@ -38,14 +38,13 @@ const Footer = () => {
     <footer className="bg-gray-950 text-gray-400">
       {/* Main footer content */}
       <div className="max-w-11/12 mx-auto py-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
-        {/* Brand column — takes 2 cols on large */}
         <div className="lg:col-span-2 space-y-5">
           {/* Logo with tagline */}
           <Link href="/">
             <Image
               src={FooterLogo}
-              width={180}
-              height={50}
+              width={200}
+              height={200}
               alt="SkillSphere"
               className="opacity-90"
             />
