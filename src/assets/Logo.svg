@@ -1,0 +1,31 @@
+<svg width="240" height="60" viewBox="0 0 240 60" role="img" xmlns="http://www.w3.org/2000/svg">
+  <title>SkillSphere</title>
+
+  <!-- Outer arcs -->
+  <path d="M 14 15 A 20 20 0 0 1 30 10" fill="none" stroke="#5db85c" stroke-width="4" stroke-linecap="round"/>
+  <path d="M 30 10 A 20 20 0 0 1 46 15" fill="none" stroke="#f5a623" stroke-width="4" stroke-linecap="round"/>
+  <path d="M 46 15 A 20 20 0 0 1 50 30" fill="none" stroke="#f5c87a" stroke-width="4" stroke-linecap="round"/>
+  <path d="M 48 42 A 20 20 0 0 1 36 50" fill="none" stroke="#4fc3f7" stroke-width="4" stroke-linecap="round"/>
+  <path d="M 24 50 A 20 20 0 0 1 12 42" fill="none" stroke="#3b6fd4" stroke-width="4" stroke-linecap="round"/>
+  <path d="M 10 30 A 20 20 0 0 1 14 15" fill="none" stroke="#7dc67a" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- Orbit rings -->
+  <ellipse cx="30" cy="30" rx="13" ry="5" fill="none" stroke="#4fc3f7" stroke-width="0.8" stroke-dasharray="3 2" transform="rotate(-20 30 30)"/>
+  <ellipse cx="30" cy="30" rx="13" ry="5" fill="none" stroke="#f5a623" stroke-width="0.8" stroke-dasharray="3 2" transform="rotate(60 30 30)"/>
+
+  <!-- Center sphere -->
+  <circle cx="30" cy="30" r="8" fill="#4f8ef7"/>
+  <circle cx="27" cy="27" r="2.5" fill="white" opacity="0.2"/>
+
+  <!-- Small orbit dots -->
+  <circle cx="30" cy="10" r="2" fill="#5db85c"/>
+  <circle cx="50" cy="22" r="2" fill="#f5a623"/>
+  <circle cx="10" cy="22" r="2" fill="#3b6fd4"/>
+  <circle cx="50" cy="38" r="2" fill="#4fc3f7"/>
+  <circle cx="10" cy="38" r="2" fill="#7dc67a"/>
+  <circle cx="30" cy="50" r="2" fill="#f5c87a"/>
+
+  <!-- Wordmark -->
+  <text x="68" y="38" font-family="Arial, sans-serif" font-size="26" font-weight="500" fill="#4f8ef7" letter-spacing="-0.5">Skill</text>
+  <text x="120" y="38" font-family="Arial, sans-serif" font-size="26" font-weight="500" fill="#f7944f" letter-spacing="-0.5">Sphere</text>
+</svg>

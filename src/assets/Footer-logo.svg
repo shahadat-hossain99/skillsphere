@@ -1,0 +1,31 @@
+<svg width="1200" height="400" viewBox="0 0 680 220" role="img" xmlns="http://www.w3.org/2000/svg">
+  <title>SkillSphere logo</title>
+  <desc>SkillSphere — a modern online learning platform logo</desc>
+
+  <circle cx="100" cy="110" r="72" fill="none" stroke="#e8e8e8" stroke-width="1"/>
+
+  <path d="M 52 55 A 72 72 0 0 1 100 38" fill="none" stroke="#5db85c" stroke-width="12" stroke-linecap="round"/>
+  <path d="M 100 38 A 72 72 0 0 1 148 55" fill="none" stroke="#f5a623" stroke-width="12" stroke-linecap="round"/>
+  <path d="M 148 55 A 72 72 0 0 1 170 105" fill="none" stroke="#f5c87a" stroke-width="12" stroke-linecap="round"/>
+  <path d="M 160 138 A 72 72 0 0 1 122 168" fill="none" stroke="#4fc3f7" stroke-width="12" stroke-linecap="round"/>
+  <path d="M 78 168 A 72 72 0 0 1 40 138" fill="none" stroke="#3b6fd4" stroke-width="12" stroke-linecap="round"/>
+  <path d="M 30 105 A 72 72 0 0 1 52 55" fill="none" stroke="#7dc67a" stroke-width="12" stroke-linecap="round"/>
+
+  <ellipse cx="100" cy="110" rx="44" ry="18" fill="none" stroke="#4fc3f7" stroke-width="1.5" stroke-dasharray="4 3" transform="rotate(-20 100 110)"/>
+  <ellipse cx="100" cy="110" rx="44" ry="18" fill="none" stroke="#f5a623" stroke-width="1.5" stroke-dasharray="4 3" transform="rotate(60 100 110)"/>
+
+  <circle cx="100" cy="110" r="22" fill="#4f8ef7"/>
+  <circle cx="93" cy="103" r="7" fill="white" opacity="0.2"/>
+
+  <circle cx="100" cy="66" r="5" fill="#5db85c"/>
+  <circle cx="144" cy="90" r="5" fill="#f5a623"/>
+  <circle cx="56" cy="90" r="5" fill="#3b6fd4"/>
+  <circle cx="144" cy="130" r="5" fill="#4fc3f7"/>
+  <circle cx="56" cy="130" r="5" fill="#7dc67a"/>
+  <circle cx="100" cy="154" r="5" fill="#f5c87a"/>
+
+  <text x="198" y="130" font-family="Arial, sans-serif" font-size="58" font-weight="500" fill="#4f8ef7" letter-spacing="-1">Skill</text>
+  <text x="327" y="130" font-family="Arial, sans-serif" font-size="58" font-weight="500" fill="#f7944f" letter-spacing="-1">Sphere</text>
+
+  <text x="199" y="158" font-family="Arial, sans-serif" font-size="13" font-weight="400" fill="#888" letter-spacing="3">LEARN · BUILD · GROW</text>
+</svg>
