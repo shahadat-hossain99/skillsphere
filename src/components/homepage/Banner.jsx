@@ -7,7 +7,7 @@ import Img from "../../assets/student.jpg";
 
 export default function Banner() {
   return (
-    <section className="pt-28 max-w-7xl mx-auto px-6 pb-16">
+    <section className="pt-14 md:pt-28 max-w-7xl mx-auto px-6 pb-16">
       <div className="grid md:grid-cols-2 items-center gap-12">
         {/* Text */}
         <motion.div
@@ -47,7 +47,7 @@ export default function Banner() {
           transition={{ duration: 0.6 }}
           className="flex justify-center"
         >
-          <div className="relative w-100 md:w-95 h-85 md:h-95 rounded-2xl overflow-hidden  shadow-lg">
+          <div className="relative w-80 md:w-105 h-85 md:h-95 rounded-2xl overflow-hidden  shadow-lg">
             <Image
               src={Img}
               alt="student"

@@ -2,11 +2,12 @@ import Image from "next/image";
 import React from "react";
 import TipsImg from "../../assets/download.jpg";
 import { FaCheck } from "react-icons/fa";
+import { Card, Chip } from "@heroui/react";
 
 const tips = [
   "Break topics into small chunks",
   "Use active recall techniques",
-  "Follow Pomodoro method",
+  "Follow Pomodoro-method",
   "Take concise notes",
   "Revise regularly",
   "Practice real-world problems",
@@ -14,15 +15,19 @@ const tips = [
 
 const LearningTips = () => {
   return (
-    <section className="relative py-16 md:py-24 bg-linear-to-b from-white to-[#f7f7ff] overflow-hidden">
-      <div className="absolute top-0 left-0 w-72 h-72 bg-[#5D38DE]/10 rounded-full blur-3xl"></div>
+    <section className=" w-11/12 md:w-10/12 mx-auto relative py-16 md:py-24 overflow-hidden">
+      <div className="absolute top-0 left-0 w-72 h-72  rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 right-0 w-72 h-72 bg-purple-300/10 rounded-full blur-3xl"></div>
 
-      <div className="relative w-11/12 md:w-10/12 mx-auto">
+      <div className="relative">
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <span className="inline-block px-4 py-1 rounded-full bg-[#38b5dE]/10 text-[#38b5de] text-sm font-medium mb-4">
+          <Chip
+            className="mb-4 bg-[#38b5dE]/10 text-[#38b5de]"
+            variant="flat"
+            radius="full"
+          >
             Learning Growth
-          </span>
+          </Chip>
 
           <h2 className="text-3xl md:text-5xl font-bold text-[#0f172a] leading-tight">
             Master Better{" "}
@@ -39,11 +44,17 @@ const LearningTips = () => {
 
         <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
           <div className="relative">
-            <div className="absolute -top-5 -right-5 z-10 hidden md:block bg-white/80 backdrop-blur-md shadow-lg rounded-2xl px-4 py-3 border border-white">
-              <p className="text-sm font-medium text-[#111827]">
-                📚 Productivity Boost
-              </p>
-            </div>
+            <Card
+              className="absolute -top-5 -right-5 z-10 hidden md:block bg-white/80 backdrop-blur-md border border-white"
+              shadow="lg"
+              radius="lg"
+            >
+              <div className="px-4 py-3 ">
+                <p className="text-sm font-medium text-[#111827]">
+                  📚 Productivity Boost
+                </p>
+              </div>
+            </Card>
 
             <Image
               sizes="(max-width: 768px) 100vw, 50vw"
@@ -66,21 +77,25 @@ const LearningTips = () => {
               motivation. These small habits compound into major results.
             </p>
 
-            {/* tips cards */}
+            {/* Tips cards */}
             <div className="space-y-4">
               {tips.map((tip, index) => (
-                <div
+                <Card
                   key={index}
-                  className="flex items-center gap-4 p-4 rounded-2xl bg-white shadow-sm hover:shadow-md transition"
+                  shadow="sm"
+                  radius="lg"
+                  className="hover:shadow-md transition"
+                  isPressable
                 >
-                  <div className="bg-[#16aee0] text-white p-2 rounded-xl">
-                    <FaCheck size={12} />
+                  <div className="flex flex-row items-center gap-4 p-4">
+                    <div className="bg-[#16aee0] text-white p-2 rounded-xl shrink-0">
+                      <FaCheck size={12} />
+                    </div>
+                    <p className="text-gray-700 font-medium text-sm md:text-base">
+                      {tip}
+                    </p>
                   </div>
-
-                  <p className="text-gray-700 font-medium text-sm md:text-base">
-                    {tip}
-                  </p>
-                </div>
+                </Card>
               ))}
             </div>
           </div>
