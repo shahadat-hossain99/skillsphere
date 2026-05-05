@@ -85,7 +85,6 @@ const LearningTips = () => {
                   shadow="sm"
                   radius="lg"
                   className="hover:shadow-md transition"
-                  isPressable
                 >
                   <div className="flex flex-row items-center gap-4 p-4">
                     <div className="bg-[#16aee0] text-white p-2 rounded-xl shrink-0">
