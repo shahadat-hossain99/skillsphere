@@ -15,11 +15,11 @@ const tips = [
 
 const LearningTips = () => {
   return (
-    <section className=" w-11/12 md:w-10/12 mx-auto relative py-16 md:py-24 overflow-hidden">
-      <div className="absolute top-0 left-0 w-72 h-72  rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 right-0 w-72 h-72 bg-purple-300/10 rounded-full blur-3xl"></div>
+    <section className=" relative py-16 md:py-24 overflow-hidden">
+      <div className="absolute top-0 left-0 w-72 h-72  rounded-full blur-3xl "></div>
+      <div className="absolute bottom-0 right-0 w-72 h-72  rounded-full blur-3xl"></div>
 
-      <div className="relative">
+      <div className="relative  w-11/12 md:w-10/12 mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-14">
           <Chip
             className="mb-4 bg-[#38b5dE]/10 text-[#38b5de]"
@@ -87,7 +87,7 @@ const LearningTips = () => {
                   className="hover:shadow-md transition"
                 >
                   <div className="flex flex-row items-center gap-4 p-4">
-                    <div className="bg-[#16aee0] text-white p-2 rounded-xl shrink-0">
+                    <div className="bg-teal-400 text-white p-2 rounded-xl shrink-0">
                       <FaCheck size={12} />
                     </div>
                     <p className="text-gray-700 font-medium text-sm md:text-base">
