@@ -1,4 +1,5 @@
 import Banner from "@/components/homepage/Banner";
+import NewReleases from "@/components/homepage/Courses/NewReleases";
 import TopCourses from "@/components/homepage/Courses/TopCourses";
 import Instructors from "@/components/homepage/Instractors";
 import Reviews from "@/components/homepage/Review";
@@ -13,6 +14,7 @@ export default function Home() {
       <LearningTips />
       <Instructors />
       <Reviews />
+      <NewReleases />
     </>
   );
 }
