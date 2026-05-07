@@ -14,7 +14,11 @@ const Navbar = () => {
   console.log(user, "nav");
 
   const handleLogOut = async () => {
-    await authClient.signOut();
+    await toast.promise(authClient.signOut(), {
+      pending: "Signing out...",
+      success: "Signed out successfully 👋",
+      error: "Sign out failed. Try again.",
+    });
   };
 
   const [menuOpen, setMenuOpen] = useState(false);

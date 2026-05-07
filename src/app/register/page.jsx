@@ -61,9 +61,9 @@ const RegisterPage = () => {
     }
   };
 
-  const handleGoogleSignUp = async () => {
+  const handleGoogleSignIn = async () => {
     toast.info("Redirecting to Google... 🔄");
-    await authClient.signUp.social({ provider: "google" });
+    await authClient.signIn.social({ provider: "google" });
   };
 
   return (
@@ -155,7 +155,7 @@ const RegisterPage = () => {
 
           {/* Google button */}
           <button
-            onClick={handleGoogleSignUp}
+            onClick={handleGoogleSignIn}
             className="w-full flex items-center justify-center gap-3 py-3 rounded-xl border border-gray-200 bg-white hover:bg-gray-50 transition shadow-sm text-sm font-medium text-gray-700 mb-6"
           >
             <FcGoogle className=" text-base" />
