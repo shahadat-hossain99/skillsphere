@@ -5,6 +5,7 @@ import { useEffect, useRef } from "react";
 import NavLinks from "./NavLinks";
 import { authClient } from "@/lib/auth-client";
 import { Avatar, Button } from "@heroui/react";
+import { toast } from "react-toastify";
 
 export default function MobileMenu({ open, setOpen }) {
   const userData = authClient.useSession();
@@ -12,7 +13,20 @@ export default function MobileMenu({ open, setOpen }) {
   // console.log(user, "mobile");
 
   const handleLogOut = async () => {
-    await authClient.signOut();
+    await toast.promise(
+      authClient.signOut({
+        fetchOptions: {
+          onSuccess: () => {
+            window.location.href = "/";
+          },
+        },
+      }),
+      {
+        pending: "Signing out...",
+        success: "Signed out successfully 👋",
+        error: "Sign out failed. Try again.",
+      },
+    );
   };
 
   const menuRef = useRef();
