@@ -3,8 +3,18 @@
 import Link from "next/link";
 import { useEffect, useRef } from "react";
 import NavLinks from "./NavLinks";
+import { authClient } from "@/lib/auth-client";
+import { Avatar, Button } from "@heroui/react";
 
 export default function MobileMenu({ open, setOpen }) {
+  const userData = authClient.useSession();
+  const user = userData.data?.user;
+  // console.log(user, "mobile");
+
+  const handleLogOut = async () => {
+    await authClient.signOut();
+  };
+
   const menuRef = useRef();
 
   // Close when clicking outside
@@ -48,23 +58,42 @@ export default function MobileMenu({ open, setOpen }) {
           </ul>
 
           {/* Buttons */}
-          <div className="border-t pt-4 mt-4 flex flex-col gap-3">
-            <Link
-              href="/login"
-              onClick={() => setOpen(false)}
-              className="w-full text-center py-2 rounded-lg border border-blue-600 text-blue-600 font-medium hover:bg-blue-50 transition"
-            >
-              Login
-            </Link>
 
-            <Link
-              href="/register"
-              onClick={() => setOpen(false)}
-              className="w-full text-center py-2 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700 transition shadow"
-            >
-              Register
-            </Link>
-          </div>
+          {!user && (
+            <div className="border-t pt-4 mt-4 flex flex-col gap-3">
+              <Link
+                href="/login"
+                onClick={() => setOpen(false)}
+                className="w-full text-center py-2 rounded-lg border border-blue-600 text-blue-600 font-medium hover:bg-blue-50 transition"
+              >
+                Login
+              </Link>
+              <Link
+                href="/register"
+                onClick={() => setOpen(false)}
+                className="w-full text-center py-2 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700 transition shadow"
+              >
+                Register
+              </Link>
+            </div>
+          )}
+
+          {user && (
+            <div className="border-t pt-4 mt-4 flex flex-col gap-3">
+              <Avatar size="sm">
+                <Avatar.Image
+                  alt="John Doe"
+                  src={user?.image}
+                  referrerPolicy="no-referrer"
+                />
+                <Avatar.Fallback>{user?.name.charAt(0)}</Avatar.Fallback>
+              </Avatar>
+
+              <Button onClick={handleLogOut} variant="danger" size="sm">
+                LogOut
+              </Button>
+            </div>
+          )}
         </div>
       </div>
     </>

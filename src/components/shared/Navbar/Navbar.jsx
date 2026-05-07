@@ -5,8 +5,18 @@ import logo from "@/assets/Logo.svg";
 import { useState, useEffect } from "react";
 import NavLinks from "./NavLinks";
 import MobileMenu from "./MobileMenu";
+import { authClient } from "@/lib/auth-client";
+import { Avatar, Button } from "@heroui/react";
 
 const Navbar = () => {
+  const userData = authClient.useSession();
+  const user = userData.data?.user;
+  console.log(user, "nav");
+
+  const handleLogOut = async () => {
+    await authClient.signOut();
+  };
+
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -33,20 +43,38 @@ const Navbar = () => {
         </ul>
 
         {/* Desktop Buttons */}
-        <div className="hidden md:flex gap-3 items-center">
-          <Link
-            href="/login"
-            className="px-5 py-2 text-sm text-blue-600 border border-blue-500 rounded-lg hover:bg-blue-50"
-          >
-            Login
-          </Link>
-          <Link
-            href="/register"
-            className="px-5 py-2 text-sm text-white bg-blue-600 rounded-lg hover:bg-blue-700"
-          >
-            Register
-          </Link>
-        </div>
+        {!user && (
+          <div className="hidden md:flex gap-3 items-center">
+            <Link
+              href="/login"
+              className="px-5 py-2 text-sm text-blue-600 border border-blue-500 rounded-lg hover:bg-blue-50"
+            >
+              Login
+            </Link>
+            <Link
+              href="/register"
+              className="px-5 py-2 text-sm text-white bg-blue-600 rounded-lg hover:bg-blue-700"
+            >
+              Register
+            </Link>
+          </div>
+        )}
+        {user && (
+          <div className="hidden md:flex gap-3 items-center">
+            <Avatar size="sm">
+              <Avatar.Image
+                alt="John Doe"
+                src={user?.image}
+                referrerPolicy="no-referrer"
+              />
+              <Avatar.Fallback>{user?.name.charAt(0)}</Avatar.Fallback>
+            </Avatar>
+
+            <Button onClick={handleLogOut} variant="danger" size="sm">
+              LogOut
+            </Button>
+          </div>
+        )}
 
         {/* Hamburger */}
         <button
