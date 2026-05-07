@@ -9,15 +9,11 @@ export function UpdateUsersInfo() {
     const name = e.target.name.value;
     const image = e.target.image.value;
 
-    const { error } = await authClient.updateUser({
-      image,
-      name,
+    toast.promise(authClient.updateUser({ image, name }), {
+      pending: "Updating your profile...",
+      success: "Successfully Updated your Profile 👌",
+      error: "Failed to update profile. Try again.",
     });
-    if (!error) {
-      toast.success("Successfully Updated your Profile");
-    } else {
-      toast.error("Failed to update profile. Try again.");
-    }
 
     console.log(name, image);
   };
