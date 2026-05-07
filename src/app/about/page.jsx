@@ -55,25 +55,25 @@ const values = [
 
 const team = [
   {
-    name: "Alex Carter",
+    name: "Shahadat Hossain",
     role: "Founder & CEO",
     image: "/1.1.jpg",
     bio: "EdTech visionary with 10+ years building learning platforms.",
   },
   {
-    name: " Johnson Roy",
+    name: " Ruhin ",
     role: "Head of Curriculum",
     image: "/2.2.jpg",
     bio: "Former educator turned full-stack developer and course designer.",
   },
   {
-    name: "Michael Brown",
+    name: "Hasmotullah",
     role: "Lead Engineer",
     image: "/3.1.jpg",
     bio: "Backend architect passionate about scalable education systems.",
   },
   {
-    name: "Shawn Lee",
+    name: "Fazle Rabbi",
     role: "Head of Design",
     image: "/4.1.jpg",
     bio: "UI/UX expert crafting intuitive learning experiences since 2015.",
