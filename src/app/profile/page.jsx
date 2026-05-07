@@ -1,11 +1,61 @@
-import React from "react";
+"use client";
+import Image from "next/image";
+import { authClient } from "@/lib/auth-client";
+import { Button } from "@heroui/react";
+import { UpdateUsersInfo } from "@/components/UserInfo/UpdateUserInfo";
 
-const ProfilePage = () => {
+const ProfileCard = () => {
+  const userData = authClient.useSession();
+  const user = userData.data?.user;
+
   return (
-    <div>
-      <h2>Profile Information</h2>
+    <div className="w-11/12 mx-auto">
+      <div className="max-w-md mx-auto mt-10 bg-white border border-gray-100 rounded-2xl shadow-sm overflow-hidden md:mb-15 mb-8">
+        <div className="h-28 bg-linear-to-r from-teal-700 to-teal-400" />
+
+        <div className="flex justify-center -mt-10">
+          <div className="w-20 h-20 relative rounded-full border-4 border-white overflow-hidden shadow-md bg-white">
+            <Image
+              src={user?.image || "/default-avatar.jpg"}
+              alt={user?.name}
+              width={100}
+              height={10}
+              className="object-cover"
+            />
+          </div>
+        </div>
+
+        <div className="text-center px-6 py-5">
+          <h2 className="text-xl font-semibold text-slate-900">{user?.name}</h2>
+
+          <p className="text-sm text-gray-500 mt-1">{user?.email}</p>
+
+          <div className="mt-3">
+            {user?.emailVerified ? (
+              <span className="text-xs bg-green-100 text-green-600 px-3 py-1 rounded-full">
+                Verified
+              </span>
+            ) : (
+              <span className="text-xs bg-yellow-100 text-yellow-600 px-3 py-1 rounded-full">
+                Not Verified
+              </span>
+            )}
+          </div>
+
+          <div className="my-4 border-t border-gray-100" />
+
+          <div className="text-sm text-gray-600 space-y-2">
+            <p>
+              <span className="text-gray-400">Joined:</span>{" "}
+              {new Date(user?.createdAt).toLocaleDateString()}
+            </p>
+          </div>
+
+          <UpdateUsersInfo />
+        </div>
+      </div>
     </div>
   );
 };
 
-export default ProfilePage;
+export default ProfileCard;
