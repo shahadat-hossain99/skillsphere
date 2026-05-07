@@ -70,7 +70,7 @@ export function UpdateUsersInfo() {
                     <Button
                       type="submit"
                       slot="close"
-                      className="bg-[#5D38DE] text-white rounded-lg hover:bg-[#4c2fc2]"
+                      className="bg-teal-500 text-white rounded-lg hover:bg-teal-600"
                     >
                       Update
                     </Button>

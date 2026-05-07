@@ -17,7 +17,7 @@ const ProfileCard = () => {
           <div className="w-20 h-20 relative rounded-full border-4 border-white overflow-hidden shadow-md bg-white">
             <Image
               src={user?.image || "/default-avatar.jpg"}
-              alt={user?.name}
+              alt={user?.name || "Not found"}
               width={100}
               height={10}
               className="object-cover"
