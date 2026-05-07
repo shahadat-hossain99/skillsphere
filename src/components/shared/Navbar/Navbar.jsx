@@ -7,6 +7,7 @@ import NavLinks from "./NavLinks";
 import MobileMenu from "./MobileMenu";
 import { authClient } from "@/lib/auth-client";
 import { Avatar, Button } from "@heroui/react";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
   const userData = authClient.useSession();
