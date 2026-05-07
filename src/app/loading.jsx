@@ -21,7 +21,7 @@ export default function Loading() {
 
         {/* Logo text */}
         <h2 className="text-xl font-bold text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-teal-500 mb-2">
-          SkillSphere
+          Skill-Sphere Host
         </h2>
 
         <p className="text-gray-600 text-sm">Loading your content...</p>
