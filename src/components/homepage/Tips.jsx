@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import TipsImg from "../../assets/download.jpg";
+import TipsImg from "../../assets/download.png";
 import { FaCheck } from "react-icons/fa";
 import { Card, Chip } from "@heroui/react";
 

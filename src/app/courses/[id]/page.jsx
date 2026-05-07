@@ -188,7 +188,7 @@ const CoursesDetailsPage = async ({ params }) => {
                   alt={course.title}
                   fill
                   sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-cover hover:scale-105 transition-transform duration-500"
+                  className="object-cover hover:scale-105 transition-transform duration-500 rounded-xl"
                 />
               </div>
 
