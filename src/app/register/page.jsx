@@ -16,6 +16,7 @@ import Link from "next/link";
 import { IoCheckmarkCircle, IoEye, IoEyeOff } from "react-icons/io5";
 import { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
+import { toast } from "react-toastify";
 
 const benefits = [
   "Access 200+ expert-led courses",
@@ -43,12 +44,12 @@ const RegisterPage = () => {
     });
 
     if (!error) {
-      router.push("/");
       toast.success("Your account created successfully");
+      router.push("/");
     } else {
       toast.error("Register failed", {
         position: "top-center",
-        autoClose: 1100,
+        autoClose: 5000,
         hideProgressBar: false,
         closeOnClick: false,
         pauseOnHover: true,
@@ -60,8 +61,9 @@ const RegisterPage = () => {
     }
   };
 
-  const handleGoogleSignIn = async () => {
-    await authClient.signIn.social({ provider: "google" });
+  const handleGoogleSignUp = async () => {
+    toast.info("Redirecting to Google... 🔄");
+    await authClient.signUp.social({ provider: "google" });
   };
 
   return (
@@ -153,7 +155,7 @@ const RegisterPage = () => {
 
           {/* Google button */}
           <button
-            onClick={handleGoogleSignIn}
+            onClick={handleGoogleSignUp}
             className="w-full flex items-center justify-center gap-3 py-3 rounded-xl border border-gray-200 bg-white hover:bg-gray-50 transition shadow-sm text-sm font-medium text-gray-700 mb-6"
           >
             <FcGoogle className=" text-base" />
