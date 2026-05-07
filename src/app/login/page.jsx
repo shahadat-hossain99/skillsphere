@@ -24,27 +24,20 @@ const LoginPage = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
 
-    const { data, error } = await authClient.signIn.email({
-      email,
-      password,
-      callbackURL: "/",
-    });
-
-    if (!error) {
-      toast.success("Welcome back! 👋");
-    } else {
-      toast.error("Invalid email or password");
-    }
+    await toast.promise(
+      authClient.signIn.email({ email, password, callbackURL: "/" }),
+      {
+        pending: "Signing you in...",
+        success: "Welcome back! 👋",
+        error: "Invalid email or password",
+      },
+    );
   };
 
   const handleGoogleSignIn = async () => {
-    const { error } = await authClient.signIn.social({ provider: "google" });
+    toast.info("Redirecting to Google... 🔄");
 
-    if (!error) {
-      toast.success("Welcome back! 👋");
-    } else {
-      toast.error("Invalid email or password");
-    }
+    await authClient.signIn.social({ provider: "google" });
   };
 
   return (
