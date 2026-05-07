@@ -38,11 +38,13 @@ const LoginPage = () => {
   };
 
   const handleGoogleSignIn = async () => {
-    toast.promise(authClient.updateUser({ image, name }), {
-      pending: "Updating your profile...",
-      success: "Successfully Updated your Profile 👌",
-      error: "Failed to update profile. Try again.",
-    });
+    const { error } = await authClient.signIn.social({ provider: "google" });
+
+    if (!error) {
+      toast.success("Welcome back! 👋");
+    } else {
+      toast.error("Invalid email or password");
+    }
   };
 
   return (
