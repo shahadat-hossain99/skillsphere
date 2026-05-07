@@ -13,18 +13,9 @@ import {
 } from "react-icons/io5";
 import Image from "next/image";
 import Link from "next/link";
-import { redirect } from "next/navigation";
-import { headers } from "next/headers";
 
 const CoursesDetailsPage = async ({ params }) => {
   const { id } = await params;
-
-  const session = await auth.api.getSession({
-    headers: await headers(),
-  });
-  if (!session) {
-    redirect(`/login?redirect=/course/${id}`);
-  }
 
   const res = await fetch(
     "https://skillsphere-grow-in-public.vercel.app/data.json",

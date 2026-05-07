@@ -8,6 +8,7 @@ import Link from "next/link";
 import { IoCheckmarkCircle, IoEye, IoEyeOff } from "react-icons/io5";
 import { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
+import { useSearchParams } from "next/navigation";
 
 const benefits = [
   "Continue where you left off",
@@ -19,13 +20,16 @@ const benefits = [
 const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
 
+  const searchParams = useSearchParams();
+  const callbackUrl = searchParams.get("callbackUrl") || "/";
+
   const onSubmit = async (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
 
     await toast.promise(
-      authClient.signIn.email({ email, password, callbackURL: "/" }),
+      authClient.signIn.email({ email, password, callbackURL: callbackUrl }),
       {
         pending: "Signing you in...",
         success: "Welcome back! 👋",
@@ -37,7 +41,10 @@ const LoginPage = () => {
   const handleGoogleSignIn = async () => {
     toast.info("Redirecting to Google... 🔄");
 
-    await authClient.signIn.social({ provider: "google" });
+    await authClient.signIn.social({
+      provider: "google",
+      callbackURL: callbackUrl,
+    });
   };
 
   return (
