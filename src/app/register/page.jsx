@@ -47,17 +47,16 @@ const RegisterPage = () => {
       toast.success("Your account created successfully");
       router.push("/login");
     } else {
-      toast.error("Register failed", {
-        position: "top-center",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: false,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "colored",
-        transition: Bounce,
-      });
+      const errorMessage = error?.message?.toLowerCase() || "";
+
+      if (
+        errorMessage.includes("user already exists") ||
+        errorMessage.includes("email already exists")
+      ) {
+        toast.error("This email already exists. Please login instead.");
+      } else {
+        toast.error("Registration failed. Try again.");
+      }
     }
   };
 
