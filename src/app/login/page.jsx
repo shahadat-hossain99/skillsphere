@@ -38,7 +38,13 @@ const LoginPage = () => {
   };
 
   const handleGoogleSignIn = async () => {
-    await authClient.signIn.social({ provider: "google" });
+    const { error } = await authClient.signIn.social({ provider: "google" });
+
+    if (!error) {
+      toast.success("Welcome back! 👋");
+    } else {
+      toast.error("Invalid email or password");
+    }
   };
 
   return (
